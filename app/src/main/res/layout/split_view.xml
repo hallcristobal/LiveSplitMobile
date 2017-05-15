@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
+        android:id="@+id/svName"
         android:layout_width="0dp"
         android:layout_alignParentLeft="true"
         android:layout_height="wrap_content"
@@ -12,6 +13,7 @@
         android:textSize="18sp"
         />
     <TextView
+        android:id="@+id/svDelta"
         android:layout_width="0dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -24,6 +26,7 @@
         android:textSize="18sp"
         />
     <TextView
+        android:id="@+id/svTime"
         android:layout_width="0dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

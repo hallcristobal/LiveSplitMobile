@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         TimerComponentView tcv = new TimerComponentView(context, null, timer, runHandler);
         tcv.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, 0, 1
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0
         ));
         tcv.setGravity(Gravity.BOTTOM);
         mainLayout.addView(tcv, 0);
@@ -64,10 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         SplitsComponentView scv = new SplitsComponentView(context, null, timer, runHandler);
+        scv.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, 0, .8f
+        ));
         mainLayout.addView(scv, 0);
         components.add(scv);
 
         TitleComponentView titleComponentView = new TitleComponentView(context, null, timer, runHandler);
+        titleComponentView.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0
+        ));
         mainLayout.addView(titleComponentView, 0);
         components.add(titleComponentView);
 
@@ -89,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
         run.pushSegment(new Segment("Kargaroc Key"));
         run.pushSegment(new Segment("Grappling Hook"));
         run.pushSegment(new Segment("Enter Gohma"));
+        run.pushSegment(new Segment("Dragon Roost Cavern"));
+        run.pushSegment(new Segment("Northern Triangle"));
+        run.pushSegment(new Segment("Greatfish"));
         run.pushSegment(new Segment("Dragon Roost Cavern"));
         run.pushSegment(new Segment("Northern Triangle"));
         run.pushSegment(new Segment("Greatfish"));

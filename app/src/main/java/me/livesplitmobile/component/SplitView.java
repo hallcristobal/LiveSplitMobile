@@ -54,10 +54,10 @@ public class SplitView extends LinearLayout {
         } else {
             setBackgroundColor(Color.TRANSPARENT);
         }
-        ((TextView)getChildAt(0)).setText(name);
-        TextView deltaTextView = (TextView)getChildAt(1);
+        ((TextView)findViewById(R.id.svName)).setText(name);
+        TextView deltaTextView = (TextView)findViewById(R.id.svDelta);
         deltaTextView.setText(delta);
         deltaTextView.setTextColor(Colors.colorFromString(colorName));
-        ((TextView)getChildAt(2)).setText(time);
+        ((TextView)findViewById(R.id.svTime)).setText(time);
     }
 }

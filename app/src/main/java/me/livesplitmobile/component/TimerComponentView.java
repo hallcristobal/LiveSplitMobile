@@ -64,10 +64,10 @@ public class TimerComponentView extends LinearLayout implements IComponent {
 
     public void update(String t, String f, String colorName) {
         LinearLayout ll = (LinearLayout)getChildAt(0);
-        TextView time = (TextView)ll.getChildAt(0);
+        TextView time = (TextView)ll.findViewById(R.id.timeTime);
         time.setText(t);
         time.setTextColor(Colors.colorFromString(colorName));
-        TextView frac = (TextView)ll.getChildAt(1);
+        TextView frac = (TextView)ll.findViewById(R.id.timeFrac);
         frac.setText(f);
         frac.setTextColor(Colors.colorFromString(colorName));
     }
