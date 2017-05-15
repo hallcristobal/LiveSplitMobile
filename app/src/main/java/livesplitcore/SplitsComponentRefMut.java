@@ -36,6 +36,30 @@ public class SplitsComponentRefMut extends SplitsComponentRef {
         }
         LiveSplitCoreNative.SplitsComponent_scrollDown(this.ptr);
     }
+    public void setVisualSplitCount(long count) {
+        if (this.ptr == 0) {
+            throw new RuntimeException();
+        }
+        LiveSplitCoreNative.SplitsComponent_setVisualSplitCount(this.ptr, count);
+    }
+    public void setSplitPreviewCount(long count) {
+        if (this.ptr == 0) {
+            throw new RuntimeException();
+        }
+        LiveSplitCoreNative.SplitsComponent_setSplitPreviewCount(this.ptr, count);
+    }
+    public void setAlwaysShowLastSplit(boolean alwaysShowLastSplit) {
+        if (this.ptr == 0) {
+            throw new RuntimeException();
+        }
+        LiveSplitCoreNative.SplitsComponent_setAlwaysShowLastSplit(this.ptr, alwaysShowLastSplit);
+    }
+    public void setSeparatorLastSplit(boolean separatorLastSplit) {
+        if (this.ptr == 0) {
+            throw new RuntimeException();
+        }
+        LiveSplitCoreNative.SplitsComponent_setSeparatorLastSplit(this.ptr, separatorLastSplit);
+    }
     SplitsComponentRefMut(long ptr) {
         super(ptr);
     }

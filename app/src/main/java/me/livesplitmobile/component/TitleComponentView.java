@@ -1,9 +1,13 @@
 package me.livesplitmobile.component;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Base64;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -54,6 +58,12 @@ public class TitleComponentView extends LinearLayout implements IComponent {
     }
 
     public void update(TitleComponentStateRef state) {
+        String iconChange = state.iconChange();
+        if (iconChange != null) {
+            byte[] decodedString = Base64.decode(iconChange.substring(13), Base64.DEFAULT);
+            Bitmap bitMap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            ((ImageView)findViewById(R.id.imageView)).setImageBitmap(bitMap);
+        }
         ((TextView)findViewById(R.id.tvGameTitle)).setText(state.game());
         ((TextView)findViewById(R.id.tvGameCategory)).setText(state.category());
         ((TextView)findViewById(R.id.tvAttemptCount)).setText(String.valueOf(state.attempts()));

@@ -38,6 +38,7 @@ public class SplitsComponentView extends ListView implements IComponent {
         setAdapter(adapter);
 
         component = new SplitsComponent();
+        component.setVisualSplitCount(13);
         runnable = new Runnable() {
             @Override
             public void run() {
