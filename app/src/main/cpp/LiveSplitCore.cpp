@@ -4,6 +4,13 @@
 
 using namespace LiveSplit;
 
+extern "C" JNIEXPORT jlong Java_livesplitcore_LiveSplitCoreNative_Run_1parseString(JNIEnv* jni_env, jobject, jstring data) {
+    auto cstr_data = jni_env->GetStringUTFChars(data, nullptr);
+    auto result = (jlong)Run_parse(cstr_data, strlen(cstr_data));
+    jni_env->ReleaseStringUTFChars(data, cstr_data);
+    return result;
+}
+
 extern "C" JNIEXPORT jint Java_livesplitcore_LiveSplitCoreNative_Attempt_1index(JNIEnv* jni_env, jobject, jlong self) {
     auto result = (jint)(Attempt_index((AttemptRef)self));
     return result;
@@ -441,6 +448,22 @@ extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponent
 
 extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponent_1scrollDown(JNIEnv* jni_env, jobject, jlong self) {
     SplitsComponent_scroll_down((SplitsComponentRefMut)self);
+}
+
+extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponent_1setVisualSplitCount(JNIEnv* jni_env, jobject, jlong self, jlong count) {
+    SplitsComponent_set_visual_split_count((SplitsComponentRefMut)self, (size_t)count);
+}
+
+extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponent_1setSplitPreviewCount(JNIEnv* jni_env, jobject, jlong self, jlong count) {
+    SplitsComponent_set_split_preview_count((SplitsComponentRefMut)self, (size_t)count);
+}
+
+extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponent_1setAlwaysShowLastSplit(JNIEnv* jni_env, jobject, jlong self, jboolean always_show_last_split) {
+    SplitsComponent_set_always_show_last_split((SplitsComponentRefMut)self, (uint8_t)always_show_last_split);
+}
+
+extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponent_1setSeparatorLastSplit(JNIEnv* jni_env, jobject, jlong self, jboolean separator_last_split) {
+    SplitsComponent_set_separator_last_split((SplitsComponentRefMut)self, (uint8_t)separator_last_split);
 }
 
 extern "C" JNIEXPORT void Java_livesplitcore_LiveSplitCoreNative_SplitsComponentState_1drop(JNIEnv* jni_env, jobject, jlong self) {

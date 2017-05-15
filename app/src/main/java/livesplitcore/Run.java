@@ -25,6 +25,13 @@ public class Run extends RunRefMut implements AutoCloseable {
         }
         return result;
     }
+    public static Run parse(String data) {
+        Run result = new Run(LiveSplitCoreNative.Run_parseString(data));
+        if (result.ptr == 0) {
+            return null;
+        }
+        return result;
+    }
     Run(long ptr) {
         super(ptr);
     }
