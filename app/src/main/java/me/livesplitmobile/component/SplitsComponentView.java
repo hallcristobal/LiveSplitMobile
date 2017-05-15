@@ -15,23 +15,24 @@ import livesplitcore.SplitsComponent;
 import livesplitcore.SplitsComponentState;
 import livesplitcore.SplitsComponentStateRef;
 import livesplitcore.Timer;
+import me.livesplitmobile.MainActivity;
 import me.livesplitmobile.R;
 
 /**
  * Created by MidKnight on 5/14/2017.
  */
 
-public class SplitsComponentView extends ListView {
+public class SplitsComponentView extends ListView implements IComponent {
     Timer timer;
     SplitsComponent component;
-    Handler timerHandler = new Handler();
+    Handler timerHandler;
     Runnable runnable;
     SplitsAdapter adapter;
 
-    public SplitsComponentView(Context context, AttributeSet attr,Timer t){
+    public SplitsComponentView(Context context, AttributeSet attr,Timer t, Handler handler){
         super(context, attr);
         timer = t;
-
+        timerHandler = handler;
         ArrayList<Split> splitArrayList = new ArrayList<Split>();
         adapter = new SplitsAdapter(context, splitArrayList);
         setAdapter(adapter);
@@ -43,13 +44,16 @@ public class SplitsComponentView extends ListView {
                 SplitsComponentState state = component.state(timer);
                 update(state);
                 state.close();
-                timerHandler.postDelayed(runnable, 1000/30);
+                timerHandler.postDelayed(runnable, MainActivity.INTERVAL);
             }
         };
     }
 
     public void run() {
-        timerHandler.postDelayed(runnable, 1000/30);
+        timerHandler.postDelayed(runnable, MainActivity.INTERVAL);
+    }
+    public Runnable getRunnable() {
+        return runnable;
     }
 
     public void update(SplitsComponentStateRef state) {

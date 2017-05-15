@@ -15,4 +15,8 @@
     <style name="splitStyle">
         <item name="android:textColor">#FCFCFCFC</item>
     </style>
+    <style name="textStyle">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#FFEEEEEE</item>
+    </style>
 </resources>

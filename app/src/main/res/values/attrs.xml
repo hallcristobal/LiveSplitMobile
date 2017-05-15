@@ -10,4 +10,9 @@
         <attr name="timeString" format="string" />
         <attr name="fracString" format="string" />
     </declare-styleable>
+    <declare-styleable name="TitleComponentView">
+        <attr name="gameName" format="string" />
+        <attr name="categoryName" format="string"/>
+        <attr name="attemptCount" format="string"/>
+    </declare-styleable>
 </resources>

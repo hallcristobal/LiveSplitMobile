@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,10 +34,14 @@ public class SplitView extends LinearLayout {
         );
 
         a.recycle();
-        isCurrentSplit = false;
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.split_view, this, true);
+        final float scale = getContext().getResources().getDisplayMetrics().density;
+        int pixels = (int) (30 * scale + 0.5f);
+        setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, pixels));
+
+        isCurrentSplit = false;
     }
 
     public SplitView(Context context) {
