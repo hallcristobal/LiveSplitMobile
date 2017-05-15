@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:gravity="bottom"
+    android:divider="?android:attr/listDivider"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    android:weightSum="1"
+    tools:context="me.livesplitmobile.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/Buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="135dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/SplitButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight=".5"
+            android:textSize="20dp"
+            android:background="@drawable/button_gradient"
+            android:onClick="startSplitClicked"
+            android:text="Split"
+            android:textColor="#FCFCFC"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_height="40dp">
+            <Button
+                android:id="@+id/UndoButton"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight=".5"
+                android:background="@drawable/button_gradient"
+                android:onClick="undoClicked"
+                android:text="Undo"
+                android:textColor="#FCFCFC"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/PauseButton"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight=".5"
+                android:background="@drawable/button_gradient"
+                android:onClick="pauseClicked"
+                android:text="Pause"
+                android:textColor="#FCFCFC"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_height="40dp">
+            <Button
+                android:id="@+id/SkipButton"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight=".5"
+                android:background="@drawable/button_gradient"
+                android:onClick="skipClicked"
+                android:text="Skip"
+                android:textColor="#FCFCFC"
+                tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/ResetButton"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight=".5"
+                android:background="@drawable/button_gradient"
+                android:onClick="resetClicked"
+                android:text="Reset"
+                android:textColor="#FCFCFC"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SplitView">
+        <attr name="fontColor" format="color" />
+        <attr name="nameText" format="string" localization="suggested" />
+        <attr name="deltaText" format="string" localization="suggested" />
+        <attr name="timeText" format="string" localization="suggested" />
+    </declare-styleable>
+    <declare-styleable name="TimerComponentView">
+        <attr name="timeString" format="string" />
+        <attr name="fracString" format="string" />
+    </declare-styleable>
+</resources>

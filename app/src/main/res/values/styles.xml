@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="buttonStyle">
+        <item name="android:textColor">#EEEEEE</item>
+        <item name="android:drawable">@drawable/button_gradient</item>
+        <item name="android:background">#FF00FF</item>
+    </style>
+    <style name="splitStyle">
+        <item name="android:textColor">#FCFCFCFC</item>
+    </style>
+</resources>
