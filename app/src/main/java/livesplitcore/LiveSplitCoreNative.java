@@ -1,6 +1,7 @@
 package livesplitcore;
 
 public class LiveSplitCoreNative {
+    public static native long Run_parseString(String data);
     public static native int Attempt_index(long self);
     public static native long Attempt_time(long self);
     public static native long HotkeySystem_new(long sharedTimer);
@@ -89,6 +90,10 @@ public class LiveSplitCoreNative {
     public static native long SplitsComponent_state(long self, long timer);
     public static native void SplitsComponent_scrollUp(long self);
     public static native void SplitsComponent_scrollDown(long self);
+    public static native void SplitsComponent_setVisualSplitCount(long self, long count);
+    public static native void SplitsComponent_setSplitPreviewCount(long self, long count);
+    public static native void SplitsComponent_setAlwaysShowLastSplit(long self, boolean alwaysShowLastSplit);
+    public static native void SplitsComponent_setSeparatorLastSplit(long self, boolean separatorLastSplit);
     public static native void SplitsComponentState_drop(long self);
     public static native boolean SplitsComponentState_finalSeparatorShown(long self);
     public static native long SplitsComponentState_len(long self);
