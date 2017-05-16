@@ -25,8 +25,7 @@ public class SplitsAdapter extends ArrayAdapter<Split> {
         }
 
         SplitView sv = (SplitView)convertView;
-        sv.isCurrentSplit = split.isCurrentSplit;
-        sv.update(split.name, split.delta, split.time, split.colorName);
+        sv.update(split);
 
         return sv;
     }

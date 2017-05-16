@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         createTimerInstance();
         addComponents();
+
     }
 
     private void addComponents() {
@@ -76,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
         mainLayout.addView(tcv, 0);
         components.add(tcv);
 
-
         SplitsComponentView scv = new SplitsComponentView(context, null, timer, runHandler);
         scv.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, 0, .8f
+                LinearLayout.LayoutParams.MATCH_PARENT, 0, 1
         ));
+        scv.setVerticalScrollBarEnabled(false);
         mainLayout.addView(scv, 0);
         components.add(scv);
 
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         if (isPermissionGranted(android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
             try {
                 File sdCard = Environment.getExternalStorageDirectory();
+                Log.d("D", sdCard.list()[0]);
                 File dir = new File(sdCard.getAbsolutePath() + "/LiveSplit");
                 dir.mkdirs();
                 File file = new File(dir, "splits.lss");
